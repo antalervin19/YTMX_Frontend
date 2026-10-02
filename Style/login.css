@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background: #000000;
+    overflow: hidden;
+}
+
+.hero {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+}
+
+.bg-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.gradient-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+        to bottom,
+        rgba(38, 38, 38, 0.75),
+        rgba(55, 0, 0, 0.85)
+    );
+    backdrop-filter: blur(3.4px);
+}
+
+.content {
+    position: relative;
+    z-index: 3;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 clamp(24px, 7vw, 140px);
+    color: #fff;
+}
+
+/* Branding */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 2.2vw, 44px);
+}
+
+.brand img {
+    width: clamp(72px, 9vw, 175px);
+    height: auto;
+    display: block;
+}
+
+.brand h1 {
+    margin: 0;
+    font-family: 'Geom', sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: clamp(56px, 7vw, 135px);
+    line-height: 1;
+}
+
+.content h2 {
+    margin: clamp(20px, 2.8vw, 54px) 0 0;
+    font-weight: 900;
+    font-style: italic;
+    font-size: clamp(32px, 3.6vw, 70px);
+    line-height: 1.1;
+}
+
+.content h3 {
+    margin: clamp(24px, 3.2vw, 62px) 0 0;
+    max-width: 52vw;
+    font-weight: 900;
+    font-style: italic;
+    font-size: clamp(16px, 1.9vw, 36px);
+    line-height: 1.22;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+@media (max-width: 700px) {
+    .content h3 {
+        max-width: 100%;
+    }
+}
+
+/* Login Form */
+.login-form {
+    position: absolute;
+    right: clamp(24px, 4.6vw, 88px);
+    top: 24vh;
+
+    width: 576px;
+    height: 486px;
+    padding-top: 78px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 52px;
+
+    border: 4px solid transparent;
+    border-radius: 30px;
+    background:
+        linear-gradient(
+            to bottom right,
+            rgba(0, 0, 0, 1),
+            rgba(23, 23, 23, 1)
+        ) padding-box,
+        linear-gradient(
+            to bottom right,
+            #FFFFFF,
+            #505050
+        ) border-box;
+}
+
+.login-form h1 {
+    margin: 0;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 36px;
+    line-height: 1;
+    text-align: center;
+}
+
+.login-form .form-logo {
+    width: 64px;
+    height: 64px;
+    display: block;
+}
+
+.login-form button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    height: 52px;
+    padding: 0 28px;
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #fff;
+
+    background: rgba(255, 255, 255, 0.14);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.login-form button:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.login-form button img {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+@media (max-width: 1100px) {
+    body {
+        overflow: auto;
+    }
+
+    .login-form {
+        position: static;
+        margin-top: 40px;
+        max-width: 100%;
+    }
+}
